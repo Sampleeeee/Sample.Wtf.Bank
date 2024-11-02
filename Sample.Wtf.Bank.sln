@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Wtf.Bank.App", "Sample.Wtf.Bank.App\Sample.Wtf.Bank.App.csproj", "{911CE1D8-6930-48BA-913C-ED37F97C11A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Wtf.Bank.Entities", "Sample.Wtf.Bank.Entities\Sample.Wtf.Bank.Entities.csproj", "{96883A0F-745B-44A9-A7E7-FDDB5C4A1B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Wtf.Bank.Server", "Sample.Wtf.Bank.Server\Sample.Wtf.Bank.Server.csproj", "{BFA429CD-898F-4358-9DFD-D55CBEB5608D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{911CE1D8-6930-48BA-913C-ED37F97C11A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911CE1D8-6930-48BA-913C-ED37F97C11A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911CE1D8-6930-48BA-913C-ED37F97C11A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911CE1D8-6930-48BA-913C-ED37F97C11A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96883A0F-745B-44A9-A7E7-FDDB5C4A1B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96883A0F-745B-44A9-A7E7-FDDB5C4A1B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96883A0F-745B-44A9-A7E7-FDDB5C4A1B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96883A0F-745B-44A9-A7E7-FDDB5C4A1B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA429CD-898F-4358-9DFD-D55CBEB5608D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA429CD-898F-4358-9DFD-D55CBEB5608D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA429CD-898F-4358-9DFD-D55CBEB5608D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA429CD-898F-4358-9DFD-D55CBEB5608D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
