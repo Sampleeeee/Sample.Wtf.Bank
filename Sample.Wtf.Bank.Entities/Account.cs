@@ -8,8 +8,7 @@ public class Account
 {
     [Required, Key] public string Id { get; set; } = null!;
     
-    [Required] public string UserId { get; set; } = null!;
-    public User User { get; set; } = null!;
+    public ICollection<UserAccount> UserAccounts { get; set; } = null!;
     
     [Required] public string Name { get; set; } = null!;
     [Required] public string LastFour { get; set; } = null!;
