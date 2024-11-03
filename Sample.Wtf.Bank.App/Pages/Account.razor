@@ -1,148 +1,82 @@
-@page  "/Account/{UserId}"
+@page "/Account/{UserId}/{AccountId}"
 
-<div class="bg-gray-900 min-h-screen p-8 font-sans text-white">
+<div class="bg-gray-800 min-h-screen p-8 font-sans">
     <div class="max-w-5xl mx-auto">
         <!-- Page Header -->
         <div class="mb-4">
-            <h1 class="text-3xl font-extrabold text-purple-500">Accounts Overview</h1>
-            <p>Hi there, FIRSTNAME. We've just finished tidying up your account.</p>
+            <h1 class="text-3xl font-extrabold text-purple-600">Account Details</h1>
+            <p class="font-normal text-white">Welcome back, User {UserId}! Here are the details for your account: {AccountId}.</p>
         </div>
 
-        <!-- Account Summary -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-xl font-semibold mb-3">Your Accounts</h2>
-            <div class="grid grid-cols-3 gap-4">
-                <div class="border p-4 rounded-md bg-gray-700">
-                    <h3 class="font-bold">Checking Account</h3>
-                    <p class="text-gray-300">****1234</p>
+        <!-- Account Details Section -->
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-3 text-white">Account Information</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="border p-4 rounded-md">
+                    <h3 class="font-bold text-white">Account Number:</h3>
+                    <p class="text-gray-300">****{LastFour}</p>
+                </div>
+                <div class="border p-4 rounded-md">
+                    <h3 class="font-bold text-white">Account Type:</h3>
+                    <p class="text-gray-300">Checking Account</p>
+                </div>
+                <div class="border p-4 rounded-md">
+                    <h3 class="font-bold text-white">Current Balance:</h3>
                     <p class="text-xl font-bold text-green-400">$1,234.56</p>
-                    <p class="text-xs text-gray-400">Available Balance</p>
                 </div>
-                <div class="border p-4 rounded-md bg-gray-700">
-                    <h3 class="font-bold">Savings Account</h3>
-                    <p class="text-gray-300">****5678</p>
-                    <p class="text-xl font-bold text-green-400">$7,890.12</p>
-                    <p class="text-xs text-gray-400">Available Balance</p>
-                </div>
-                <div class="border p-4 rounded-md bg-gray-700">
-                    <h3 class="font-bold">Credit Line</h3>
-                    <p class="text-gray-300">****9012</p>
-                    <p class="text-xl font-bold text-red-400">-$234.56</p>
-                    <p class="text-xs text-gray-400">Remaining Balance</p>
-                </div>
-
-                <!-- Make the button span across all columns -->
-                <div class="col-span-3">
-                    <button class="w-full p-3 rounded-md text-center bg-purple-800 hover:bg-purple-500 transition duration-200">
-                        Open New Account
-                    </button>
+                <div class="border p-4 rounded-md">
+                    <h3 class="font-bold text-white">Account Status:</h3>
+                    <p class="text-green-400">Active</p>
                 </div>
             </div>
         </div>
 
         <!-- Recent Transactions Table -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-xl font-semibold mb-3">Recent Transactions</h2>
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-3 text-white">Recent Transactions</h2>
             <div class="overflow-x-auto">
-                <table class="w-full table-auto text-left border-collapse text-gray-300">
-                    <thead class="bg-gray-700">
-                    <tr>
-                        <th class="px-4 py-2 text-sm font-medium text-gray-400">Date</th>
-                        <th class="px-4 py-2 text-sm font-medium text-gray-400">Description</th>
-                        <th class="px-4 py-2 text-sm font-medium text-gray-400">Amount</th>
-                        <th class="px-4 py-2 text-sm font-medium text-gray-400">Balance</th>
-                        <th class="px-4 py-2 text-sm font-medium text-gray-400">Reference</th>
-                    </tr>
+                <table class="w-full table-auto text-left border-collapse">
+                    <thead class="bg-gray-600">
+                        <tr>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-300">Date</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-300">Description</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-300">Amount</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-300">Balance</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-300">Reference</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr class="hover:bg-gray-700">
-                        <td class="px-4 py-2">11/01/2024</td>
-                        <td class="px-4 py-2">Deposit from "Uncle Scambo"</td>
-                        <td class="px-4 py-2 text-green-400">+$1,000.00</td>
-                        <td class="px-4 py-2">$1,234.56</td>
-                        <td class="px-4 py-2">REF#123456</td>
-                    </tr>
-                    <tr class="hover:bg-gray-700">
-                        <td class="px-4 py-2">10/29/2024</td>
-                        <td class="px-4 py-2">Mystery Withdrawal</td>
-                        <td class="px-4 py-2 text-red-400">-$500.00</td>
-                        <td class="px-4 py-2">$234.56</td>
-                        <td class="px-4 py-2">REF#654321</td>
-                    </tr>
-                    <tr class="hover:bg-gray-700">
-                        <td class="px-4 py-2">10/28/2024</td>
-                        <td class="px-4 py-2">Payment to "Exotic Pets R Us"</td>
-                        <td class="px-4 py-2 text-red-400">-$200.00</td>
-                        <td class="px-4 py-2">$734.56</td>
-                        <td class="px-4 py-2">REF#ABCDEF</td>
-                    </tr>
+                        <tr class="hover:bg-gray-600 text-gray-300">
+                            <td class="px-4 py-2">11/01/2024</td>
+                            <td class="px-4 py-2">Deposit from "Rich Uncle"</td>
+                            <td class="px-4 py-2 text-green-400">+$1,000.00</td>
+                            <td class="px-4 py-2">$1,234.56</td>
+                            <td class="px-4 py-2">REF#A1B2C3</td>
+                        </tr>
+                        <tr class="hover:bg-gray-600 text-gray-300">
+                            <td class="px-4 py-2">10/29/2024</td>
+                            <td class="px-4 py-2">Mystery Withdrawal</td>
+                            <td class="px-4 py-2 text-red-400">-$500.00</td>
+                            <td class="px-4 py-2">$734.56</td>
+                            <td class="px-4 py-2">REF#D4E5F6</td>
+                        </tr>
+                        <tr class="hover:bg-gray-600 text-gray-300">
+                            <td class="px-4 py-2">10/28/2024</td>
+                            <td class="px-4 py-2">Payment to "Sketchy Online Shop"</td>
+                            <td class="px-4 py-2 text-red-400">-$200.00</td>
+                            <td class="px-4 py-2">$534.56</td>
+                            <td class="px-4 py-2">REF#G7H8I9</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-
-        <!-- Notifications and Messages -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-xl font-semibold mb-3">Notifications</h2>
-            <ul class="space-y-2">
-                <li class="flex items-center space-x-3 text-sm">
-                    <span class="text-blue-400">🔔</span>
-                    <span>New security alert: Unusual activity detected on account **5678.</span>
-                </li>
-                <li class="flex items-center space-x-3 text-sm">
-                    <span class="text-yellow-400">⚠️</span>
-                    <span>Your credit line balance is low. Consider paying off some balance.</span>
-                </li>
-                <li class="flex items-center space-x-3 text-sm">
-                    <span class="text-green-400">💬</span>
-                    <span>Message from BANK_32: We appreciate your loyalty!</span>
-                </li>
-                <li class="flex items-center space-x-3 text-sm">
-                    <span class="text-red-400">❗</span>
-                    <span>Important: You have a **unclaimed prize** waiting! Click here to claim!</span>
-                </li>
-                <li class="flex items-center space-x-3 text-sm">
-                    <span class="text-purple-400">🛍️</span>
-                    <span>Your account is eligible for a special **Limited Edition BANK_32 Tote Bag!**</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Additional Account Services (Extra Bloat) -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-xl font-semibold mb-3">Our Amazing Services</h2>
-            <div class="grid grid-cols-2 gap-4">
-                <button class="border p-4 rounded-md text-center hover:bg-purple-800 transition duration-200">
-                    <span class="block font-semibold">Bill Pay</span>
-                    <span class="block text-xs text-gray-300">Set up automatic payments to our **sister companies**</span>
-                </button>
-                <button class="border p-4 rounded-md text-center hover:bg-purple-800 transition duration-200">
-                    <span class="block font-semibold">Transfer Funds</span>
-                    <span class="block text-xs text-gray-300">Send money to other accounts (not guaranteed to reach them!)</span>
-                </button>
-                <button class="border p-4 rounded-md text-center hover:bg-purple-800 transition duration-200">
-                    <span class="block font-semibold">Loan Center</span>
-                    <span class="block text-xs text-gray-300">View current loan offers from **unknown lenders**</span>
-                </button>
-                <button class="border p-4 rounded-md text-center hover:bg-purple-800 transition duration-200">
-                    <span class="block font-semibold">Get Rich Quick!</span>
-                    <span class="block text-xs text-gray-300">Sign up for our **exclusive pyramid scheme**!</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Frequent Questions (Extra Bloat) -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-xl font-semibold mb-3">Frequently Asked Questions</h2>
-            <ul class="space-y-2">
-                <li><strong>What is the best way to contact support?</strong> <em>Try yelling into the void!</em></li>
-                <li><strong>How secure is my information?</strong> <em>More secure than your grandma's cookie recipe!</em></li>
-                <li><strong>Can I really win a free car?</strong> <em>Only if you buy a ticket to our *Totally Legit Raffle*</em></li>
-                <li><strong>What happens if I lose my account?</strong> <em>You can always create a new one. We love new accounts!</em></li>
-            </ul>
         </div>
     </div>
 </div>
 
 <Footer />
 
+@code {
+    [Parameter] public string UserId { get; set; }
+    [Parameter] public string AccountId { get; set; }
+}
