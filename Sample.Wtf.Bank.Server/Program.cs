@@ -3,6 +3,21 @@ using Sample.Wtf.Bank.Server;
 
 var builder = WebApplication.CreateBuilder( args );
 
+builder.Services.AddCors( options =>
+{
+    options.AddPolicy( "BlazorClientPolicy", policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    } );
+} );
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+});
+
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -20,7 +35,9 @@ if ( app.Environment.IsDevelopment() )
 }
 
 app.UseHttpsRedirection();
+app.UseCors( "BlazorClientPolicy" );
 
 app.MapAuthenticationEndpoints();
+app.MapAdminEndpoints();
 
 app.Run();

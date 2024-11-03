@@ -1,5 +1,8 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    font-style: normal;
 }
 
 h1:focus {

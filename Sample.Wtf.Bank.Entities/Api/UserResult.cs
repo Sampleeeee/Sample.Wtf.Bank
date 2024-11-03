@@ -1,0 +1,32 @@
+namespace Sample.Wtf.Bank.Entities.Api;
+
+public class UserResult
+{
+    public string Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public char? MiddleInitial { get; set; }
+    
+    public string Username { get; set; }
+    public string Password { get; set; }
+
+    public List<string> Accounts { get; set; } = new();
+    
+    public UserResult()
+    { }
+    
+    public UserResult( User? user )
+    {
+        if ( user is null ) return;
+
+        Id = user.Id;
+        
+        FirstName = user.FirstName;
+        LastName = user.LastName;
+        
+        MiddleInitial = user.MiddleInitial;
+        
+        Username = user.Username;
+        Password = user.Password;
+    }
+}

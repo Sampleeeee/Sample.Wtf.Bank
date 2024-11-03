@@ -1,0 +1,39 @@
+<tr class="border-b border-gray-500 @Class">
+    <td class="py-2 px-4">
+        <input disabled="true" class="bg-gray-600 text-white rounded-md pd-1" placeholder="Id" />
+    </td>
+    <td class="py-2 px-4">
+        <input type="text" @bind-value="_firstName" class="bg-gray-600 text-white rounded-md p-1" placeholder="First Name" />
+    </td>
+    <td class="py-2 px-4">
+        <input type="text" @bind-value="_lastName" class="bg-gray-600 text-white rounded-md p-1" placeholder="Last Name" />
+    </td>
+    <td class="py-2 px-4">
+        <input type="text" @bind-value="_username" class="bg-gray-600 text-white rounded-md p-1" placeholder="Username" />
+    </td>
+    <td class="py-2 px-4">
+        <input type="text" @bind-value="_password" class="bg-gray-600 text-white rounded-md p-1" placeholder="Password" />
+    </td>
+    @if ( !Creating )
+    {
+        <td class="py-2 px-4 min-w-60">
+            <MultiSelect Text="Accounts" Class="text-black" /> <!-- Adjust the max-width as needed -->
+        </td>
+    }
+    else
+    {
+        <td class="py-2 px-4 min-w-60">
+            <span class="text-white">Set After Creating</span>
+        </td>
+    }
+    <td class="py-2 px-4">
+        @if ( Creating )
+        {
+            <button class="bg-blue-600 text-white rounded-md px-2 py-1 text-center" @onclick="async () => await CreateUserAsync()">Create</button>
+        }
+        else
+        {
+            @* <button class="bg-blue-600 text-white rounded-md px-2 py-1" @onclick="(async () => await UpdateUserAsync()">Save</button> *@
+        }
+    </td>
+</tr>
